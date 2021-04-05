@@ -1,0 +1,115 @@
+<html>
+<head>
+	<title>web-таймер</title>
+	 <link rel="stylesheet" href="style.css">
+</head>
+<body onload="check_status_all();">
+	<div class="left-block" align="center">
+		<p>текущее время:</p>
+		<p id = "current_time">...</p>
+		<input type="button" id="sync_time" style="white-space: pre-line" value="Синхронизировать время"/>
+		
+	</div>
+	<div class="main-block">
+		<i class="top-line" align="center"> Канал 1</i>
+		<table class="col-4-5">
+			<tbody align="center"><tr> 
+				<th align="center" >on/off</th>
+				<th align="center" colspan="2">включение</th>
+				<th align="center" colspan="2">выключение</th>
+				<td align="center">пн</td>
+				<td align="center">вт</td>
+				<td align="center">ср</td>
+				<td align="center">чт</td>
+				<td align="center">пт</td>
+				<td align="center" style=color:red>сб</td>
+				<td align="center" style=color:red>вс</td>
+			</tr>
+			<tr style="max-height:1px"> 
+				<td><input type="checkbox" id="flag_on0" size="1"></td>
+				<td><input type="text"  id="hour_on0" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_on0" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]">&#160&#160&#160&#160&#160 </td>
+				<td><input type="text" id="hour_off0" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_off0" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]"></td>
+				<td><input type="checkbox" id="mon0"></td>
+				<td><input type="checkbox" id="tu0"></td>
+				<td><input type="checkbox" id="we0"></td>
+				<td><input type="checkbox" id="thu0"></td>
+				<td><input type="checkbox" id="fr0"></td>
+				<td><input type="checkbox" id="sat0"></td>
+				<td><input type="checkbox" id="su0"></td>
+			</tr>
+			<tr> 
+				<td><input type="checkbox" id="flag_on1" size="1"></td>
+				<td><input type="text" id="hour_on1" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_on1" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]">&#160&#160&#160&#160&#160 </td>
+				<td><input type="text" id="hour_off1" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_off1" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]"></td>
+				<td><input type="checkbox" id="mon1"></td>
+				<td><input type="checkbox" id="tu1"></td>
+				<td><input type="checkbox" id="we1"></td>
+				<td><input type="checkbox" id="thu1"></td>
+				<td><input type="checkbox" id="fr1"></td>
+				<td><input type="checkbox" id="sat1"></td>
+				<td><input type="checkbox" id="su1"></td>
+			</tr>
+			<tr> 
+				<td><input type="checkbox" id="flag_on2" size="1"></td>
+				<td><input type="text"  id="hour_on2" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_on2" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]">&#160&#160&#160&#160&#160 </td>
+				<td><input type="text" id="hour_off2" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_off2" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]"></td>
+				<td><input type="checkbox" id="mon2"></td>
+				<td><input type="checkbox" id="tu2"></td>
+				<td><input type="checkbox" id="we2"></td>
+				<td><input type="checkbox" id="thu2"></td>
+				<td><input type="checkbox" id="fr2"></td>
+				<td><input type="checkbox" id="sat2"></td>
+				<td><input type="checkbox" id="su2"></td>
+			</tr>
+			<tr> 
+				<td><input type="checkbox" id="flag_on3" size="1"></td>
+				<td><input type="text"  id="hour_on3" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_on3" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]">&#160&#160&#160&#160&#160 </td>
+				<td><input type="text" id="hour_off3" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_off3" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]"></td>
+				<td><input type="checkbox" id="mon3"></td>
+				<td><input type="checkbox" id="tu3"></td>
+				<td><input type="checkbox" id="we3"></td>
+				<td><input type="checkbox" id="thu3"></td>
+				<td><input type="checkbox" id="fr3"></td>
+				<td><input type="checkbox" id="sat3"></td>
+				<td><input type="checkbox" id="su3"></td>
+			</tr>
+			<tr> 
+				<td><input type="checkbox" id="flag_on4" size="1"></td>
+				<td><input type="text"  id="hour_on4" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_on4" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]">&#160&#160&#160&#160&#160 </td>
+				<td><input type="text" id="hour_off4" size="2" onkeyup="validForm(this)" maxlength="2" pattern="0[0-9]|1[0-9]|2[0-3]|[0-9]">&#160:</td>
+				<td><input type="text" id="min_off4" size="2" onkeyup="validForm(this)" maxlength="2" pattern="[0-9]|[0-5][0-9]"></td>
+				<td><input type="checkbox" id="mon4"></td>
+				<td><input type="checkbox" id="tu4"></td>
+				<td><input type="checkbox" id="we4"></td>
+				<td><input type="checkbox" id="thu4"></td>
+				<td><input type="checkbox" id="fr4"></td>
+				<td><input type="checkbox" id="sat4"></td>
+				<td><input type="checkbox" id="su4"></td>
+			</tr>
+			<tr>
+				<td  colspan="12" align="center"><p id = "info_msg">...</p></td>
+			</tr></tbody>
+		</table>
+		<div class="col-1-5" align="center">
+			<input type="button" id="switch_button1" value="on/off" style="background: coral;width: 80%; height:50%"/>
+			<input type="button" id="refresh_button" value="Обновить" style="width: 80%; height:15%"/>
+			<input type="button" id="send_button" value="Изменить" style="width: 80%; height:15%"/>
+			
+		</div>
+	
+	<script src="scripts.js"></script>
+	
+	
+	
+</body>
+
+</html>
